@@ -1,0 +1,68 @@
+<!-- 提示 -->
+<div id="top-alert" class="fixed alert alert-error" style="display: none;position:fixed; top:51px; left:50%; margin-left:-300px; width:600px; z-index:10000;">
+  <button class="close fixed" style="margin-top: 4px;">&times;</button>
+  <div class="alert-content">这是内容</div>
+</div>
+<!-- 导航条
+================================================== -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" title="{:C('WEB_SITE_TITLE')}" href="{:U('index/index')}"><img src="__IMG__/weiphp_logo.png?v={:SITE_VERSION}" title="{:C('WEB_SITE_TITLE')}"/></a>
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <think:nav name="nav">
+                    	<eq name="nav.pid" value="0">
+                        <li>
+                            <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
+                        </li>
+                        </eq>
+                    </think:nav>
+                </ul>
+            </div>
+            <div class="nav-collapse collapse pull-right">
+                <if condition="is_login()">
+                    <ul class="nav" style="margin-right:0">
+                    	<li class="dropdown">
+                            <a href="#" class="dropdown-toggle login-nav" data-toggle="dropdown" style="">{$member_public.public_name}<b class="caret"></b></a>
+                            <ul class="dropdown-menu" style="display:none">
+                            	<li><a href="{:U('home/MemberPublic/lists')}">公众号管理</a></li>
+                                <volist name='member_public_list' id='vo'>
+                                <li><a href="{:U('home/MemberPublic/changPublic','id='.$vo['id'])}">{$vo.public_name}</a></li>
+                                </volist>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle login-nav" data-toggle="dropdown" style="">{:get_username()} <b class="caret"></b></a>
+                            <ul class="dropdown-menu" style="display:none">
+                                <li><a href="{:U('Admin/index/index')}">后台管理</a></li>
+                                <li><a href="{:U('User/profile')}">修改密码</a></li>
+                                <li><a href="{:U('User/logout')}">退出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                <else/>
+                    <ul class="nav" style="margin-right:0">
+                    	<li style="padding-right:20px">你好!欢迎来到{:C('WEB_SITE_TITLE')}</li>
+                        <li>
+                            <a href="{:U('User/login')}">登录</a>
+                        </li>
+                        <li>
+                            <a href="{:U('User/register')}">注册</a>
+                        </li>
+                        <li>
+                            <a href="{:U('admin/index/index')}" style="padding-right:0">后台入口</a>
+                        </li>
+                    </ul>
+                </if>
+            </div>
+        </div>
+    </div>
+</div>
+<link href="__CSS__/module.css?v={:SITE_VERSION}" rel="stylesheet">
+<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js?v={:SITE_VERSION}"></script>

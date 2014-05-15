@@ -1,0 +1,16 @@
+<include file="Public/mobile_head"/>	
+<link href="{:ADDON_PUBLIC_PATH}/css.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<body>
+	<div id="container" class="container">
+    	<img src="{:ADDON_PUBLIC_PATH}/finish.jpg" width="100%"/>
+        <div class="lead_over">
+        <if condition="empty($info['finish_tip'])">调研完成，谢谢参与<else/>{$info.finish_tip}</if></div>
+        <a href="javascript:;" onClick="closepage();" class="share_btn">关 闭</a>
+    	<p class="copyright">WeiPHP 版权所有</p>
+<script type="text/javascript">
+function closepage(){
+	WeixinJSBridge.call('closeWindow');
+}
+</script>
+</body>
+</html>

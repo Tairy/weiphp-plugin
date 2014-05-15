@@ -1,0 +1,22 @@
+    <div class="footer">
+    	<div class="wrap foot_wrap">
+        	<p class="foot_nav">
+            	<a href="{:U('about')}">关于我们</a>
+                <a href="{:U('about')}">联系方式</a>
+<!--                <a href="#">友情链接</a>
+                <a href="#">版权声明</a>-->
+                <a href="{:U('license')}">授权协议</a>
+            </p>
+            <p style="14px; padding-bottom:10px;">WeiPHP官方QQ交流群：8322255</p>
+            <p class="copyright">@ 2013 - 2015 weiphp {:C('WEB_SITE_ICP')}</p>
+            <div class="getqrcode">
+            	<img src="__IMG__/getqrcode.jpg"/>
+                <p>微信扫码左侧二维码<br/>并加关注WeiPHP官方微信公众号<br/>体验WeiPHP的最新功能</p>
+            </div>
+            <div class="foot_logo"></div>
+        </div>
+    </div>
+<!-- 页面footer钩子，一般用于加载插件JS文件和JS代码 -->
+{:hook('pageFooter', 'widget')}    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<include file="Public/mobile_head"/>	
+<link href="{:ADDON_PUBLIC_PATH}/css.css?v={:SITE_VERSION}" rel="stylesheet" type="text/css">
+<body>
+<div id="container" class="container">
+    <div class="top"></div>
+    <div class="rotate"></div>
+    <div class="lead_box">
+        <h6>测试结果</h6>
+        <div class="lead_content">
+            <div class="intro">
+            <p>你的得分是：{$score}分</p>
+            	<p>{$tip}</p>
+            </div>
+        </div>
+        <input class="lead_btn" id="submit" type="button" value="关闭">
+        </form>
+        </div>
+        <div class="rotate"></div>
+    <div class="bottom">
+        <p class="copyright">WeiPHP 版权所有</p>
+    </div>
+</div>
+    
+<script type="text/javascript">
+function closepage(){
+	WeixinJSBridge.call('closeWindow');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<block name="header"></block>
+<div id="main-container" class="container">
+  <div class="row">
+<!--    <block name="side">
+      <div class="span3 bs-docs-sidebar">
+        <block name="publish"></block>
+        <ul class="nav nav-list bs-docs-sidenav">
+          {:W('Category/lists', array($category['id'], ACTION_NAME == 'index'))}
+        </ul>
+      </div>
+    </block>-->
+    <block name="side"> 
+  <div class="span3 bs-docs-sidebar">
+<php>
+$m = strtolower(MODULE_NAME);
+$c = strtolower(CONTROLLER_NAME);
+$a = strtolower(ACTION_NAME);
+
+$ad = ucfirst ( parse_name ( $_REQUEST['_addons'], 1 ) );
+$navClass[$ad] = 'active';
+$navClass[$m.'_'.$c.'_'.$a] = 'active';
+$addonList = D ( 'Addons' )->getWeixinList ();
+</php>
+    <ul class="nav nav-list bs-docs-sidenav">
+      <li class="{$navClass['home_memberpublic_lists']}"> <a href="{:U('Home/MemberPublic/lists')}"> <i class="icon-chevron-right"></i>公众号管理 </a> </li>
+      <li class="{$navClass['home_index_main']}"> <a href="{:U('Home/Index/main')}"> <i class="icon-chevron-right"></i>功能设置 </a> </li>
+      <volist name='addonList' id='vo'>
+      <li class="{$navClass[$vo[name]]}"> <a href="{$vo[addons_url]}" title="{$vo.description}"> 
+      <i class="icon-chevron-right"><php>if(!empty($vo['icon'])) { </php> <img src="{$vo.icon}" /> <php> } </php> </i>
+      {$vo.title} </a> </li>
+      </volist>
+    </ul>
+  </div>
+</block>
+    <block name="body"></block>
+  </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $(window).resize(function(){
+            $("#main-container").css("min-height", $(window).height() - 241);
+        }).resize();
+    })
+</script>

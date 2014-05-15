@@ -1,0 +1,54 @@
+/**
+ * weiphp 新css
+ */
+.normal_tips{ background:#FFC; color:#F60; border-radius:5px; border:1px solid #F93; line-height:20px; padding:5px 10px; }
+#login_body{ background:url(../images/front_login_bg.png) repeat 0 50px;}
+.login_box,.reg_box{ width:400px; margin:50px auto; background:#e3e3e3; border:1px solid #fff; border-radius:10px; box-shadow:0 2px 5px #333;}
+.form_title{ height:50px; text-align:center; background:#33ab07; color:#fff; font-size:18px; line-height:50px; border-top-left-radius:10px;border-top-right-radius:10px;}
+.form_body{ padding:30px;}
+.login_box .controls{ position:relative;}
+.login_box .control-label{ display:none}
+.login_box .span3{ padding:10px 10px 10px 40px; border:none; background:none; box-shadow:none}
+.login_box .input_panel{margin:0 auto; background:#fff; border-radius:10px; border:1px solid #ccc;}
+.login_box .control-group{ margin:0;}
+.login_box  #inputEmail{ background:url(../images/user_icon.png) 10px  center no-repeat; margin:0; width:288px; border-bottom:1px solid #ccc; border-bottom-left-radius:0; border-bottom-right-radius:0;}
+.login_box  #inputPassword{ background:url(../images/pwd_icon.png) 10px center no-repeat; margin:0; width:288px;}
+.login_box #verify {
+background: url(../images/write_icon.png) 10px center no-repeat;
+margin: 0;
+width: 288px;
+border-top: 1px solid #ccc;
+border-top-left-radius:0; border-top-right-radius:0;
+}
+.login_box .verifyimg { margin-top:10px; width:100%}
+.login_box .btn{ padding:10px 0; width:100%; border-radius:10px; border:1px solid #fff;}
+.login_box .reloadverify_a{ position:absolute; top:10px; right:10px;}
+
+.reg_box .control-group{ overflow:hidden;zoom:1;}
+.reg_box .control-label{ width:70px; float:left; line-height:30px;}
+.reg_box .controls{ float:left;}
+.reg_box .btn{ padding:10px 30px; margin-top:15px;}
+
+/* 会员卡 */
+.card_preview{ position:relative; float:left; width:300px; height:179px; margin-right:40px; box-shadow:0 0 6px #666; border-radius:8px;}
+.card_preview #cardBg{ width:100%; height:100%; position:absolute; left:0; top:0;}
+.card_preview .card_num{ position:absolute; bottom:10px; right:10px; font-size:18px; text-shadow:0 1px #fff; color:#000; font-weight:bold;}
+.card_preview .card_name{ position:absolute; top:20px; left:20px; z-index:100; font-size:20px; font-weight:bold;}
+
+/* 模板 */
+.template_select{ float:left; width:100%;zoom:1; margin:0 0 20px;}
+.template_select li{ float:left; position:relative; margin-right:40px; width:170px; height:410px; text-align:center; list-style:none; cursor:pointer}
+.template_select li .phone{ width:170px; height:353px; position:relative; background:url(../images/m/iphone0.png) no-repeat;}
+.template_select li .phone img{ position:absolute; width:144px; height:240px; top:55px;left:13.5px;}
+.template_select li.selected .phone,.template_select li.hover .phone{ background:url(../images/m/iphone1.png) no-repeat;}
+.template_item p{ padding-top:10px;}
+.template_item input{ display:inline; vertical-align:middle; margin:0 5px 0 0 ;}
+.template_item label{ display:inline;}
+.template_item .use_tips{ position:absolute; top:50px; right:170px; background:#333; padding:10px; color:#fff; width:150px; border-radius:10px; text-align:left; display:none}
+/* 二级菜单 */
+#hasSubNav{ padding:0; overflow:visible;}
+#hasSubNav .sub_tab{ border:1px solid #ddd; border-top:none; height:30px; padding:10px;margin:-15px 0 10px;}
+.sub_tab_content{ margin-top:20px;}
+.sub_tab li{ float:left; margin-right:10px; list-style:none; }
+.sub_tab li a{ display:block; height:30px; line-height:30px; padding:0 15px; border-radius:5px;}
+.sub_tab li a.cur{ background-color:#33ab07; color:#fff}
